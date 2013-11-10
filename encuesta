@@ -1,0 +1,92 @@
+/*
+ * Created by SharpDevelop.
+ * User: REDE
+ * Date: 08/11/2013
+ * Time: 06:40 p.m.
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace encuestabuena
+{
+	/// <summary>
+	/// Description of MainForm.
+	/// </summary>
+	public partial class MainForm : Form
+	{
+		public MainForm()
+		{
+			//
+			// The InitializeComponent() call is required for Windows Forms designer support.
+			//
+			InitializeComponent();
+			
+			//
+			// TODO: Add constructor code after the InitializeComponent() call.
+			//
+		}
+		
+		void TextBox1TextChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void Label1Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+         
+		   int Aciertos = 0;
+		   
+		   string nom = this.textBox1.Text;
+		   string codigo = this.textBox2.Text;
+		   string fecha = monthCalendar1.SelectionStart.ToShortDateString();
+		   
+		   string Capital = "";
+		   if(this.radioButton1.Checked){
+		   	Capital = "D.F";
+			Aciertos++;
+		   }
+		   
+		   string Pais = "";
+		   if(this.checkBox1.Checked){
+		   	Pais = "Portugal";
+		   	Aciertos++;
+		   }
+		
+		    string Estados = "";
+		   if(this.numericUpDown1.Text == "32"){
+		   	//Estados = "32";
+		   	Aciertos++;
+		   }
+		   
+		   string Calendario = monthCalendar1.SelectionRange.Start.ToShortDateString();
+		   if(Calendario == "07/05/1945"){
+		   	Aciertos++;
+		   }
+		   
+		MessageBox.Show("Nombre:"+"\t" + nom + "\n" +"Codigo" + "\t" + codigo + "\n"+
+			                "Aciertos:" +"\t" + Aciertos);   
+		   
+		}
+			
+		
+		
+		void RadioButton1CheckedChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void MonthCalendar1DateChanged(object sender, DateRangeEventArgs e)
+		{
+			
+		}
+	}
+}
